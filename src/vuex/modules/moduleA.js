@@ -45,7 +45,7 @@ const mutations = {
     // },(rsp)=> {
     //   console.log(rsp)
     // });
-    sysnStateUser(state);
+    syncStateUser(state);
   },
   [type.USER_UPDATE](state){
     updateUser(1, {name: Math.random(), email: Math.random(), password: Math.random()}, (data)=> {
@@ -58,7 +58,7 @@ const mutations = {
     // }, (rsp)=> {
     //   console.log(rsp)
     // });
-    sysnStateUser(state);
+    syncStateUser(state);
   },
   [type.USER_DELETE](state){
     deleteUser(1, (data)=> {
@@ -71,7 +71,7 @@ const mutations = {
     // }, (rsp)=> {
     //   console.log(rsp)
     // });
-    sysnStateUser(state);
+    syncStateUser(state);
   },
 }
 

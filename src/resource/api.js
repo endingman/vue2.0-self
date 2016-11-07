@@ -18,7 +18,7 @@ export const deleteUser = (id, callback, callerr)=> {
   http.$delete(serivce.user + '/' + id, callback, callerr)
 }
 
-export const sysnStateUser = (state)=> {
+export const syncStateUser = (state)=> {
   clearTimeout(t)
   t=setTimeout(()=>{
     getUserList((data)=> {
