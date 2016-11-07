@@ -1,6 +1,6 @@
 import http from './http'
 import serivce from './service'
-import Immutable from 'Immutable'
+
 let t
 export const getUserList = (callback, callerr,force)=> {
   http.$get(serivce.user, callback, callerr,force)
@@ -22,7 +22,7 @@ export const sysnStateUser = (state)=> {
   clearTimeout(t)
   t=setTimeout(()=>{
     getUserList((data)=> {
-      state.user = Immutable.fromJS(data)
+      state.user = data
     }, (rsp)=> {
       console.log('error',rsp)
     },true)

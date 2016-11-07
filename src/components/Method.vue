@@ -23,7 +23,7 @@
       <button @click="user_post">ajax_create</button>
       <button @click="user_put">ajax_update</button>
       <button @click="user_delete">ajax_delete</button>
-      <p>后台数据以laravel初始表为数据,过程请看log</p>
+      <p>后台数据以laravel初始表,过程请看log</p>
       <p>
       <table style="margin: auto">
         <thead>
