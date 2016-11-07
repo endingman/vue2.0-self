@@ -11,8 +11,8 @@
     <div>
       <p>moduleA</p>
       Clicked: {{ $store.state.moduleA.count }} times, count is {{ evenOrOdd2 }}.
-      <button @click="increment2">+</button>
-      <button @click="decrement2">-</button>
+      <button @click="INCREMENT">+</button>
+      <button @click="REDUCE">-</button>
       <button @click="incrementIfOdd2">Increment if odd</button>
       <button @click="incrementAsync2">Increment async</button>
     </div>
@@ -23,7 +23,7 @@
       <button @click="user_post">ajax_create</button>
       <button @click="user_put">ajax_update</button>
       <button @click="user_delete">ajax_delete</button>
-      <p>后台数据以laravel初始表,过程请看log</p>
+      <p>后台数据以laravel初始user表参考,过程请看log</p>
       <p>
       <table style="margin: auto">
         <thead>
@@ -51,6 +51,7 @@
 </template>
 
 <script>
+  import * as type from '../vuex/types'
   import { mapGetters, mapActions } from 'vuex'
 
   export default {
@@ -65,8 +66,8 @@
       'decrement',
       'incrementIfOdd',
       'incrementAsync',
-      'increment2',
-      'decrement2',
+      type.INCREMENT,
+      type.REDUCE,
       'incrementIfOdd2',
       'incrementAsync2',
 

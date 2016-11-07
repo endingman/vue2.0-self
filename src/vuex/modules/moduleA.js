@@ -1,13 +1,36 @@
 //储存模块A的state和mutations
+
+
 import * as type from '../types'
-import { getUserList, createUser, updateUser,deleteUser,sysnStateUser } from '../../resource/api'
+import { getUserList, createUser, updateUser,deleteUser,syncStateUser } from '../../resource/api'
 import http from '../../resource/http'
 
-
+//属性
 const state     = {
   count: 0,
   user: []
 }
+
+//Controller层
+const actions ={
+  [type.INCREMENT]: ({commit}) => commit(type.INCREMENT),
+  [type.REDUCE]: ({commit}) => commit(type.REDUCE),
+  incrementIfOdd2 ({commit, state}) {
+    if ((state.count + 1) % 2 === 0) {
+      commit(type.INCREMENT)
+    }
+  },
+  incrementAsync2 ({commit}) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        commit(type.INCREMENT)
+        resolve()
+      }, 1000)
+    })
+  }
+}
+
+//逻辑层
 const mutations = {
   [type.INCREMENT](state){
     state.count++
@@ -77,5 +100,6 @@ const mutations = {
 
 export default {
   state,
+  actions,
   mutations
 }

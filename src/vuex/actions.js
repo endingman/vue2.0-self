@@ -1,5 +1,6 @@
 import * as type from './types'
 
+//Controller层
 export default {
   increment: ({commit}) => commit('increment'),
   decrement: ({commit}) => commit('decrement'),
@@ -12,22 +13,6 @@ export default {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         commit('increment')
-        resolve()
-      }, 1000)
-    })
-  },
-
-  increment2: ({commit}) => commit(type.INCREMENT),
-  decrement2: ({commit}) => commit(type.REDUCE),
-  incrementIfOdd2 ({commit, state}) {
-    if ((state.count + 1) % 2 === 0) {
-      commit(type.INCREMENT)
-    }
-  },
-  incrementAsync2 ({commit}) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        commit(type.INCREMENT)
         resolve()
       }, 1000)
     })
